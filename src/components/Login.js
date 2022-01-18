@@ -22,9 +22,10 @@ const Login = (props) => {
             console.log('Navigate')
             localStorage.setItem('token', json.authtoken);
             navigate("/", { replace: true });
+            props.showAlert('Loged In Success', 'success');
         }
         else {
-            alert("Invalid credentials");
+            props.showAlert(json.error, 'danger');
         }
     }
 
