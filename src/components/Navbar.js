@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 
@@ -25,7 +25,10 @@ const Navbar = () => {
 
                     </ul>
 
-
+                    <form className="d-flex">
+                        <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
+                        <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
+                    </form>
 
 
                 </div>
