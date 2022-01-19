@@ -24,7 +24,7 @@ const Navbar = () => {
                             <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname === "/dashboard" ? "active" : ""}`} aria-current="page" to="/dashboard">Dashboard</Link>
+                            {localStorage.getItem('token') ? <Link className={`nav-link ${location.pathname === "/dashboard" ? "active" : ""}`} aria-current="page" to="/dashboard">Dashboard</Link> : ""}
                         </li>
 
                     </ul>
