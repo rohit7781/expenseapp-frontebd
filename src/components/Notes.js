@@ -100,7 +100,7 @@ function Notes(props) {
                 </div>
                 {notes.map((note) => {
                     return <Noteitem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />;
-                })
+                }).reverse()
 
                 }
             </div>
