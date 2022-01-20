@@ -1,9 +1,10 @@
 import React from 'react'
+import Notes from './Notes'
 
-function Dashboard() {
+function Dashboard(props) {
     return (
-        <div>
-            this is Dashboard
+        <div className='container'>
+            <Notes showAlert={props.showAlert} />
         </div>
     )
 }
