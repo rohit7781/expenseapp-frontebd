@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import userContext from '../context/user/userContext';
 
-function Budjet() {
+function Budjet(props) {
     const [budgetvalue, setBudgetvalue] = useState("")
     const [money, setmoney] = useState("");
 
@@ -14,43 +14,34 @@ function Budjet() {
             getuserdata()
             setBudgetvalue(user.budget);
             // eslint-disable-next-line
-            // console.log(typeof (user.budget));
+
         }
 
     }, [getuserdata, user.budget])
 
 
 
-    // console.log(user);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // setBudgetvalue(user.budget);
+
 
         let finalval = parseInt(money) + user.budget
         updatebudget(user._id, finalval)
 
         setBudgetvalue(finalval);
         setmoney("")
-
+        props.showAlert("Budget added Successfully", 'success')
 
     }
 
     const addbudget = (e) => {
         e.preventDefault();
-
         setmoney(e.target.value)
 
     }
-    // const budgetclick = (e) => {
-    //     e.preventDefault();
-    //     const newbudget = parseInt(budget)
-    //     Budgetvalue = Budgetvalue + newbudget;
-    //     console.log(Budgetvalue);
 
-    // console.log(typeof (money));
-
-    // }
 
     return <div>
         <div className='flex container'>
