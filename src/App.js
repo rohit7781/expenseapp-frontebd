@@ -11,7 +11,7 @@ import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import { useState } from 'react';
-
+import Notestate from './context/notes/NoteState';
 
 
 
@@ -31,18 +31,20 @@ function App() {
 
   return (
     <>
-      <Router>
-        <div>
-          <Navbar />
-          <Alert alert={alert} />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/dashboard" element={<Dashboard />} />
-            <Route exact path="/login" element={<Login showAlert={showAlert} />} />
-            <Route exact path="/signup" element={<Signup showAlert={showAlert} />} />
-          </Routes>
-        </div>
-      </Router>
+      <Notestate>
+        <Router>
+          <div>
+            <Navbar />
+            <Alert alert={alert} />
+            <Routes>
+              <Route exact path="/" element={<Home showAlert={showAlert} />} />
+              <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route exact path="/login" element={<Login showAlert={showAlert} />} />
+              <Route exact path="/signup" element={<Signup showAlert={showAlert} />} />
+            </Routes>
+          </div>
+        </Router>
+      </Notestate>
     </>
   );
 }
