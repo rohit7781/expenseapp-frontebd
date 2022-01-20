@@ -30,7 +30,6 @@ function Budjet(props) {
         let finalval = parseInt(money) + user.budget
         updatebudget(user._id, finalval)
 
-        setBudgetvalue(finalval);
         setmoney("")
         props.showAlert("Budget added Successfully", 'success')
 

@@ -1,17 +1,34 @@
 import React, { useContext, useState } from 'react'
 import noteContext from "../context/notes/noteContext"
+import userContext from '../context/user/userContext';
 
 const AddExpense = (props) => {
     const context = useContext(noteContext);
     const { addNote } = context;
-
     const [note, setNote] = useState({ title: "", amount: "", tag: "" })
+
+
+
+    const context2 = useContext(userContext);
+    const { user, updatebudget } = context2;
+
+
+
 
     const handleClick = (e) => {
         e.preventDefault();
-        addNote(note.title, note.amount, note.tag);
-        setNote({ title: "", amount: "", tag: "" })
-        props.showAlert("Addeed Successfully", 'success')
+        if (user.budget >= parseInt(note.amount)) {
+            addNote(note.title, note.amount, note.tag);
+            setNote({ title: "", amount: "", tag: "" })
+            props.showAlert("Addeed Successfully", 'success')
+
+            let finalval = user.budget - parseInt(note.amount)
+            updatebudget(user._id, finalval)
+        }
+        else {
+            props.showAlert("Your Budget is low ! Kindly add your Budget", 'danger')
+            setNote({ title: "", amount: "", tag: "" });
+        }
 
     }
 
