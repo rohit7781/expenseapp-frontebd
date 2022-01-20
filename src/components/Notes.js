@@ -82,9 +82,7 @@ function Notes(props) {
 
             <div className='row my-3'>
                 <h2>My Expenses</h2>
-                <div className="container mx-2">
-                    {notes.length === 0 && 'No Expenses to display to display'}
-                </div>
+
                 <table class="table my-3">
                     <thead>
                         <tr>
@@ -97,6 +95,9 @@ function Notes(props) {
                         </tr>
                     </thead>
                 </table>
+                <div className="container mx-2">
+                    {notes.length === 0 && 'No Expenses to display to display'}
+                </div>
                 {notes.map((note) => {
                     return <Noteitem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />;
                 })

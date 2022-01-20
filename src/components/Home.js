@@ -4,9 +4,8 @@ import Budjet from './Budjet'
 
 export default function Home(props) {
     return (
-        <div className='container'>
-            <Budjet />
-            <AddExpense showAlert={props.showAlert} />
+        <div className='container my-5'>
+            {localStorage.getItem('token') ? <> <Budjet /><AddExpense showAlert={props.showAlert} /></> : <h2>Kindly Login or SignUp to Add your Expenses or to view home Page</h2>}
         </div>
     )
 }
