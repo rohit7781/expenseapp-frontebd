@@ -91,7 +91,7 @@ function Notes(props) {
                             <th className='text-center' style={{ width: "15%" }} scope="col">Amount</th>
                             <th style={{ width: "30%" }} scope="col">Description</th>
                             <th className='text-center' style={{ width: "10%" }} scope="col">Date</th>
-                            <th className='text-center' scope="col">Update/Delete</th>
+                            <th className='text-center' scope="col">Delete-Update</th>
                         </tr>
                     </thead>
                 </table>
