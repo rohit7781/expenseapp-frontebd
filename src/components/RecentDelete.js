@@ -30,9 +30,9 @@ const RecentDelete = (props) => {
 
                         <th style={{ width: "30%" }} scope="col">Expenditure</th>
                         <th className='text-center' style={{ width: "15%" }} scope="col">Amount</th>
-                        <th style={{ width: "30%" }} scope="col">Description</th>
+                        <th style={{ width: "25%" }} scope="col">Description</th>
                         <th className='text-center' style={{ width: "10%" }} scope="col">Date</th>
-                        <th className='text-center' scope="col">Delete-Update</th>
+                        <th className='text-center' scope="col">Permanenet Delete-Redo</th>
                     </tr>
                 </thead>
             </table>
