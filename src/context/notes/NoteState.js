@@ -3,6 +3,8 @@ import { useState } from "react";
 
 const Notestate = (props) => {
   const host = "https://cloudnotebookbackend.herokuapp.com";
+  // const host = "http://localhost:5000";
+
   let notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
 
@@ -81,9 +83,35 @@ const Notestate = (props) => {
   }
 
 
+  const recentdelete = async (id, display) => {
+    // API Call 
+    const response = await fetch(`${host}/api/notes/recentdelete/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": localStorage.getItem('token')
+      },
+      body: JSON.stringify({ display })
+    });
+    // eslint-disable-next-line
+    const json = await response.json();
+
+    let newNotes = JSON.parse(JSON.stringify(notes))
+    // Logic to edit in client
+    for (let index = 0; index < newNotes.length; index++) {
+      const element = newNotes[index];
+      if (element._id === id) {
+        newNotes[index].display = display;
+        break;
+      }
+    }
+    setNotes(newNotes);
+  }
+
+
 
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes, recentdelete }}>
       {props.children}
     </NoteContext.Provider>
   )
