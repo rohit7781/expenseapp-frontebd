@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 const Login = (props) => {
     const host = "https://cloudnotebookbackend.herokuapp.com";
+    // const host = "http://localhost:5000";
+
 
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" })
     let navigate = useNavigate();

@@ -4,6 +4,7 @@ import userContext from './userContext';
 const UserState = (props) => {
 
     const host = "https://cloudnotebookbackend.herokuapp.com";
+    // const host = "http://localhost:5000";
     let userInitial = []
     // eslint-disable-next-line
     const [user, setUser] = useState(userInitial)
