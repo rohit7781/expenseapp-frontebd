@@ -51,6 +51,7 @@ const Login = (props) => {
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label"><h4>Password</h4></label>
                     <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" minLength={5} required />
+                    <div id="emailHelp" className="form-text">Password must be above 6 character.</div>
                 </div>
 
                 <button type="submit" className="btn btn-primary">Submit</button>
