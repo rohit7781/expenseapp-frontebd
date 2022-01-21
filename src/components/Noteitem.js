@@ -8,7 +8,7 @@ function Noteitem(props) {
     const now = note.date.toString();
     return (
         <>
-            <table class="table table-bordered">
+            <table className="table table-bordered">
                 <tbody>
                     <tr>
                         <td style={{ width: "30%" }} >{note.title}</td>

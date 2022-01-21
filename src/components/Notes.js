@@ -5,6 +5,7 @@ import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 
 
+
 function Notes(props) {
     const context = useContext(noteContext);
 
@@ -40,7 +41,7 @@ function Notes(props) {
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
-
+    // console.log(notes);
     return (
         <>
             <div>
@@ -83,7 +84,7 @@ function Notes(props) {
             <div className='row my-3'>
                 <h2>My Expenses</h2>
 
-                <table class="table my-3">
+                <table className="table my-3">
                     <thead>
                         <tr>
 
@@ -99,7 +100,11 @@ function Notes(props) {
                     {notes.length === 0 && 'No Expenses to display to display'}
                 </div>
                 {notes.map((note) => {
-                    return <Noteitem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />;
+                    if (note.display) {
+
+                        return <Noteitem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />;
+                    }
+                    return false;
                 }).reverse()
 
                 }

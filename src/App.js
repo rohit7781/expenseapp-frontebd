@@ -13,6 +13,7 @@ import Alert from './components/Alert';
 import { useState } from 'react';
 import Notestate from './context/notes/NoteState';
 import UserState from "./context/user/UserState";
+import RecentDelete from "./components/RecentDelete";
 
 
 
@@ -43,6 +44,7 @@ function App() {
                 <Route exact path="/dashboard" element={<Dashboard showAlert={showAlert} />} />
                 <Route exact path="/login" element={<Login showAlert={showAlert} />} />
                 <Route exact path="/signup" element={<Signup showAlert={showAlert} />} />
+                <Route exact path="/recentdelete" element={<RecentDelete showAlert={showAlert} />} />
               </Routes>
             </div>
           </Router>

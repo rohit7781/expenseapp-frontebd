@@ -26,6 +26,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             {localStorage.getItem('token') ? <Link className={`nav-link ${location.pathname === "/dashboard" ? "active" : ""}`} aria-current="page" to="/dashboard">Dashboard</Link> : ""}
                         </li>
+                        <li className="nav-item">
+                            {localStorage.getItem('token') ? <Link className={`nav-link ${location.pathname === "/recentdelete" ? "active" : ""}`} aria-current="page" to="/recentdelete">Recently Deleted</Link> : ""}
+                        </li>
 
                     </ul>
 
