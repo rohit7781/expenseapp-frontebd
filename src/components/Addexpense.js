@@ -42,7 +42,23 @@ const AddExpense = (props) => {
             <form className="my-3">
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label"><strong><h4>Expenditure Name</h4></strong></label>
-                    <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} required />
+                    <div className='d-flex justify-content-between'>
+                        <div className='col-10'>
+                            <input type="text" className="form-control " id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} required />
+                        </div>
+                        <div className="dropdown mx-3">
+                            <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select your Item
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><button onClick={() => { setNote({ title: "Fruit", amount: "", tag: "" }) }} className="dropdown-item" >Fruit</button></li>
+                                <li><button onClick={() => { setNote({ title: "Vegetables", amount: "", tag: "" }) }} className="dropdown-item" >Vegetables</button></li>
+                                <li><button onClick={() => { setNote({ title: "General Need", amount: "", tag: "" }) }} className="dropdown-item" >General Need</button></li>
+                                <li><button onClick={() => { setNote({ title: "Milk", amount: "", tag: "" }) }} className="dropdown-item" >Milk</button></li>
+                                <li><button onClick={() => { setNote({ title: "Clothing", amount: "", tag: "" }) }} className="dropdown-item" >Clothing</button></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div id="notesHelp" className="form-text">(Expenditure Name is compulsary )</div>
                 </div>
                 <div className="mb-3">
