@@ -28,10 +28,17 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ## Homepage 
-![Screenshot (113)-min](https://user-images.githubusercontent.com/86741434/150441820-45840b30-eb45-41ac-9a2e-084498f2afbd.jpg)
+![Screenshot (114)](https://user-images.githubusercontent.com/86741434/150514064-32f65055-f713-42e1-8919-6228d3d448db.png)
+
 
 ## Dashboard
-![b (1)](https://user-images.githubusercontent.com/86741434/150442208-7e97a2fb-be63-4881-858c-5f171216667d.jpg)
+![Screenshot (115)](https://user-images.githubusercontent.com/86741434/150514615-be525e65-4995-46dc-b519-1bd7b34447ca.png)
+
+
+
+## Recent deleted dashboard
+![Screenshot (116)](https://user-images.githubusercontent.com/86741434/150514556-ff3d87f3-2fad-4f7d-b0bb-49f816d8f7b5.png)
+
 
 ## Signup page
 ![Screenshot (112)](https://user-images.githubusercontent.com/86741434/150442383-2e87f9ec-7dd4-4f1a-b0a2-8f24c35a5fbe.jpg)
